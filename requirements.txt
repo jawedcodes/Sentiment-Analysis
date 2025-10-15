@@ -4,6 +4,4 @@ streamlit
 imblearn
 nltk
 regex
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
+string
