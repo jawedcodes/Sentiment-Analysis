@@ -1,7 +1,6 @@
-numpy
-scikit-learn 
-streamlit
-imblearn
-nltk
-regex
-string
+numpy>=2.1.0
+scikit-learn>=1.5.1
+streamlit>=1.38.0
+imbalanced-learn>=0.12.3
+nltk>=3.9.1
+regex>=2024.7.24
