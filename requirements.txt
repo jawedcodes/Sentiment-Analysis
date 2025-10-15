@@ -3,5 +3,5 @@ scikit-learn
 streamlit
 imblearn
 nltk
-re
+regex
 string
