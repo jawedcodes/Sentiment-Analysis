@@ -2,19 +2,26 @@ import pickle
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.feature_extraction.text import TfidfTransformer
 import streamlit as st
-import nltk
 import re
-from nltk.corpus import stopwords
 import string
 
 lemmatizer=nltk.WordNetLemmatizer()
 
+from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 
-# Download resources (only first time)
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
+import nltk
+
+for pkg in ['stopwords', 'punkt', 'wordnet']:
+    try:
+        nltk.data.find(f'tokenizers/{pkg}')
+    except LookupError:
+        nltk.download(pkg)
+
+# # Download resources (only first time)
+# nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('wordnet')
 
 
 # print(sklearn.__version__)
@@ -62,4 +69,5 @@ if st.button('Analys'):
         st.success('😊Neutral')
     else:
         st.success('✌️Positive')
+
 
