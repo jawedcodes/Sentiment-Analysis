@@ -4,13 +4,14 @@ from sklearn.feature_extraction.text import TfidfTransformer
 import streamlit as st
 import re
 import string
+import nltk
+
 
 lemmatizer=nltk.WordNetLemmatizer()
 
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 
-import nltk
 
 for pkg in ['stopwords', 'punkt', 'wordnet']:
     try:
@@ -69,5 +70,6 @@ if st.button('Analys'):
         st.success('😊Neutral')
     else:
         st.success('✌️Positive')
+
 
 
