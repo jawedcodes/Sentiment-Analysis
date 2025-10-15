@@ -9,15 +9,16 @@ import nltk
 
 lemmatizer=nltk.WordNetLemmatizer()
 
+# Ensure necessary NLTK resources are available
+for resource in ['stopwords', 'punkt', 'wordnet']:
+    try:
+        nltk.data.find(f'corpora/{resource}')
+    except LookupError:
+        nltk.download(resource)
+
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 
-
-for pkg in ['stopwords', 'punkt', 'wordnet']:
-    try:
-        nltk.data.find(f'tokenizers/{pkg}')
-    except LookupError:
-        nltk.download(pkg)
 
 # # Download resources (only first time)
 # nltk.download('stopwords')
@@ -70,6 +71,7 @@ if st.button('Analys'):
         st.success('😊Neutral')
     else:
         st.success('✌️Positive')
+
 
 
 
