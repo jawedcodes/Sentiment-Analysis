@@ -4,4 +4,3 @@ streamlit
 imblearn
 nltk
 regex
-string
